@@ -1,0 +1,4 @@
+* #+title: Curriculum Vitae with Org-mode
+#+author: Jan Peteler
+
+This repository contains the source for my CV. The document is maintained in org-mode. The main export format is to LaTeX and PDF.
