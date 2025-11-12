@@ -8,3 +8,13 @@ devenv.local.yaml
 
 # pre-commit
 .pre-commit-config.yaml
+
+# git-secret
+.gitsecret/keys/random_seed
+!*.secret
+cv/secrets
+
+# misc
+*.tex
+*.xdv
+*~

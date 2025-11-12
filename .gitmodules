@@ -1,0 +1,10 @@
+[submodule "lib/org-cv"]
+	path = lib/org-cv
+	url = https://gitlab.com/Titan-C/org-cv.git
+[submodule "lib/Awesome-CV"]
+	path = lib/Awesome-CV
+	url = https://github.com/posquit0/Awesome-CV
+[submodule "lib/fontawesome"]
+	path = lib/fontawesome
+	url = https://github.com/braniii/fontawesome
+    branch = fa6

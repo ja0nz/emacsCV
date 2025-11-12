@@ -1,4 +1,17 @@
 * #+title: Curriculum Vitae with Org-mode
 #+author: Jan Peteler
+#+INCLUDE: "secrets.org"
 
 This repository contains the source for my CV. The document is maintained in org-mode. The main export format is to LaTeX and PDF.
+
+* Local Variables :ARCHIVE:noexport:
+# Local Variables --disabled--: 
+# eval: (add-hook 'after-save-hook
+#                 (lambda ()
+#                   (let ((file "secrets.org"))
+#                     (unless (file-exists-p file)
+#                       (with-temp-buffer (write-file file))))
+#                   ;; Export Org file
+#                   (org-export-to-file 'awesomecv "src/zamboni-vita.tex"))
+#                 :append :local)
+# End:

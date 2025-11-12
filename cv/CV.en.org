@@ -1,0 +1,35 @@
+#+TITLE: Senior Software Engineer
+#+AUTHOR: Jane Doe
+#+HOMEPAGE: https://janedoe.dev
+#+GITHUB: janedoe
+#+LINKEDIN: janedoe
+#+PHOTO: photo.jpg
+#+CVCOLOR: awesome-skyblue
+#+PHOTOSTYLE: right,rectangle,noedge
+#+INCLUDE: ./secrets
+#+SETUPFILE: ./setup
+
+* Education
+** MSc Computer Science
+   :cvschool:
+   :FROM: <2016-09-01>
+   :TO: <2018-05-31>
+   :SCHOOL: University of Freiburg
+   :LOCATION: Freiburg, Germany
+
+Thesis on scalable distributed systems.
+
+* Employment
+** Lead Developer at MegaCorp
+   :cventries:
+   :FROM: <2021-01-01>
+   :TO: <Present>
+   :EMPLOYER: MegaCorp Inc.
+   :LOCATION: Freiburg, Germany
+
+Led a team of 8 engineers on backend systems.
+
+* Skills
+   :cvskills:
+
+Python, C++, Distributed Systems
