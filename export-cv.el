@@ -1,9 +1,9 @@
 ;;; export-cv.el --- Batch export Org CVs to AwesomeCV -*- lexical-binding: t; -*-
 
-;; Author: Your Name
+;; Author: ja0nz
 ;; Created: 2025-11-11
 ;; Version: 0.3
-;; Keywords: org, latex, cv, awesomecv, batch
+;; Keywords: org, latex, cv, resume, awesomecv
 
 ;;; Commentary:
 ;;
@@ -17,7 +17,7 @@
 ;; Features:
 ;; - Finds project root via .git
 ;; - Loads AwesomeCV backend from lib/org-cv
-;; - Ensures secrets.org and src/ exist
+;; - Ensures cv/secrets and src/ exist
 ;; - Cross-platform (Linux, macOS, Windows)
 
 ;;; Code:
