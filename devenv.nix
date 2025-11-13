@@ -5,7 +5,10 @@
   packages = with pkgs; [ git tectonic git-secret ];
 
   # https://devenv.sh/languages/
-  languages.texlive.enable = true;
+  languages.texlive = {
+    enable = true;
+    base = pkgs.texliveFull;
+  };
 
   # https://devenv.sh/tasks/
   # Usage: devenv tasks run build
@@ -40,6 +43,11 @@
         tectonic "$input" -o "$output_dir"
       '';
       description = "Quick: Build from tex to pdf";
+    };
+    # Usage: tt2p *.tex
+    "tt2p" = {
+      exec =  "latexmk -xelatex $1 && latexmk -c $1";
+      description = "Quick: Use latexmk instead";
     };
   };
 }
