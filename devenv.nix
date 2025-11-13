@@ -49,5 +49,19 @@
       exec =  "latexmk -xelatex $1 && latexmk -c $1";
       description = "Quick: Use latexmk instead";
     };
+    "showlatest" = {
+      exec = ''
+        shopt -s nullglob
+        # Find all PDFs recursively and pick the newest one
+        newest_pdf=$(find build -type f -iname '*.pdf' -printf '%T@ %p\n' | sort -nr | head -n1 | cut -d' ' -f2-)
+        if [[ -n "$newest_pdf" ]]; then
+            echo "Opening newest PDF: $newest_pdf"
+            xdg-open "$newest_pdf"
+        else
+            echo "No PDF found in build/"
+        fi
+      '';
+      description = "Show latest pdf in build/";
+    };
   };
 }
