@@ -39,7 +39,7 @@
     };
     # Usage: tt2p *.tex
     "tt2p" = {
-      exec =  "latexmk -xelatex $1 && latexmk -c $1";
+      exec =  "latexmk -xelatex $1 || true; latexmk -c $1";
       description = "Quick: Use latexmk instead";
     };
     "showlatest" = {
