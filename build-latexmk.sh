@@ -17,6 +17,14 @@ OVERRIDES_CLS="$DEVENV_ROOT/lib/awesome-cv-additions.cls"
 build_tex() {
     local input="$1"
 
+    # Make input absolute relative to DEVENV_ROOT
+    local abs_input
+    if [[ "$input" = /* ]]; then
+        abs_input="$input"           # already absolute
+    else
+        abs_input="$(pwd)/$input"
+    fi
+
     # --- create temporary directory for patched class ---
     TMPDIR=$(mktemp -d)
     trap 'rm -rf "$TMPDIR"' EXIT
@@ -27,9 +35,11 @@ build_tex() {
     # prepend temp directory to TEXINPUTS
     export TEXINPUTS="$TMPDIR${TEXINPUTS:+:$TEXINPUTS}:"
 
-    # compile
-    latexmk -xelatex "$input" || true
-    latexmk -c "$input"
+    # --- build from root so .latexmkrc is found ---
+    pushd "$DEVENV_ROOT" > /dev/null
+    latexmk -xelatex "$abs_input" || true
+    latexmk -c "$abs_input"
+    popd > /dev/null
 
     # cleanup happens automatically via trap
 }
