@@ -18,7 +18,7 @@
       description = "Build from org-mode to tex";
     };
     "build:pdf" = {
-      exec = "bash $DEVENV_ROOT/build_tectonic.sh";
+      exec = "bash $DEVENV_ROOT/build-tectonic.sh";
       after = [ "build:tex" ];
       description = "Build from tex to pdf";
     };
@@ -34,13 +34,13 @@
     };
     # Usage: t2p *.tex 
     "t2p" = {
-      exec = ./build_tectonic.sh;
-      description = "Quick: Build from tex to pdf";
+      exec = ./build-tectonic.sh;
+      description = "Tectonic: Build from tex to pdf";
     };
     # Usage: tt2p *.tex
     "tt2p" = {
-      exec =  "latexmk -xelatex $1 || true; latexmk -c $1";
-      description = "Quick: Use latexmk instead";
+      exec = ./build-latexmk.sh;
+      description = "Latexmk: Build from tex to pdf";
     };
     "showlatest" = {
       exec = ''

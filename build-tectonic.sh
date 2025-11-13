@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 #===============================================================================
-# build_tectonic.sh — Safe Tectonic build wrapper with temporary symlinks
+# build-tectonic.sh — Safe Tectonic build wrapper with temporary symlinks
 #
 # This script allows building LaTeX documents with Tectonic while keeping
-# shared class/style files (e.g., awesome-cv.cls, fontawesome6.sty) outside
+# shared class/style files (e.g., awesome-cv.cls, fontawesome.sty) outside
 # the source tree. It temporarily symlinks everything from
 #   $DEVENV_ROOT/lib/zzamboni/
 # into
@@ -11,9 +11,10 @@
 # so Tectonic can find them in workspace mode.
 #
 # Usage:
-#   ./build.sh                → Build all documents via `tectonic -X build`
-#   ./build.sh src/foo.tex    → Build a specific .tex file into
-#                                $DEVENV_ROOT/build/foo/
+#   ./build-tectonic.sh                → Build all documents via
+#                                        `tectonic -X build`
+#   ./build-tectonic.sh src/foo.tex    → Build a specific .tex file into
+#                                        $DEVENV_ROOT/build/foo/
 #
 # The script always removes the created symlinks, even if the build fails.
 #===============================================================================
