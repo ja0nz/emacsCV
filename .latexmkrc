@@ -9,8 +9,6 @@ $out_dir = 'build';
 
 # TEXINPUTS: include src directory for classes/packages
 $ENV{'TEXINPUTS'} = "src:" . ($ENV{'TEXINPUTS'} // '');
-# TEXINPUTS: this awesome-cv.cls take precedence
-$ENV{'TEXINPUTS'} = "lib/Awesome-CV:" . ($ENV{'TEXINPUTS'} // '');
 
 # Clean-up settings (remove intermediates on clean)
 $clean_ext = "aux bbl blg log toc out lof lot fls fdb_latexmk synctex.gz";
