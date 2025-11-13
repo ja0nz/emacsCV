@@ -46,7 +46,7 @@
       exec = ''
         shopt -s nullglob
         # Find all PDFs recursively and pick the newest one
-        newest_pdf=$(find build -type f -iname '*.pdf' -printf '%T@ %p\n' | sort -nr | head -n1 | cut -d' ' -f2-)
+        newest_pdf=$(find $DEVENV_ROOT/build -type f -iname '*.pdf' -printf '%T@ %p\n' | sort -nr | head -n1 | cut -d' ' -f2-)
         if [[ -n "$newest_pdf" ]]; then
             echo "Opening newest PDF: $newest_pdf"
             xdg-open "$newest_pdf"
