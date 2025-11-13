@@ -1,1 +1,8 @@
+# These options are useful for HTML or ASCII export, and harmless for
+# AwesomeCV, so I leave them on all the time
+#+options: num:1
+#+options: prop:("FROM" "TO" "LOCATION" "EMPLOYER" "SCHOOL" "ORGANIZATION" "DATE" "POSITION" "LABEL")
+#+options: toc:nil
 
+# LaTeX options
+#+latex_class_options: [12pt,a4paper]
