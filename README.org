@@ -1,17 +1,26 @@
-* #+title: Curriculum Vitae with Org-mode
-#+author: Jan Peteler
-#+INCLUDE: "secrets.org"
+#+title: Curriculum Vitae with Org-mode
+#+author: ja0nz
 
-This repository contains the source for my CV. The document is maintained in org-mode. The main export format is to LaTeX and PDF.
 
-* Local Variables :ARCHIVE:noexport:
-# Local Variables --disabled--: 
-# eval: (add-hook 'after-save-hook
-#                 (lambda ()
-#                   (let ((file "secrets.org"))
-#                     (unless (file-exists-p file)
-#                       (with-temp-buffer (write-file file))))
-#                   ;; Export Org file
-#                   (org-export-to-file 'awesomecv "src/zamboni-vita.tex"))
-#                 :append :local)
-# End:
+
+* Git secret
+Git secret is used to encrypt [[file:cv/secrets.secret]]
+This file can be used for private information that you don't want to store in a public repo like
+#+begin_src org
+#+mobile: <123>
+#+address: <street>
+#+end_src
+
+In order to populate your information into secrets and encrypt them run:
+#+begin_src sh
+git secret clean # Remove secrets files
+rm -rf .gitsecret/keys/* # Remove all old keys
+git secret tell your@email # Connect to your gpg keys via email uid
+# <edit cv/secrets>
+git secret hide -m
+#+end_src
+
+Memo to you & myself - on cloning the repo somewhere new you need to reveal the secrets:
+#+begin_src sh
+git secret reveal
+#+end_src
